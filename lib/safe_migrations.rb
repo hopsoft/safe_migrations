@@ -5,6 +5,7 @@ module ActiveRecord
 
       def puts_migration_error(message)
         puts message unless message.is_a?(Exception)
+        raise if RAILS_ENV == "development"
 
         msg = []
         msg << "\n\n\n***************************************************\n"
